@@ -11,6 +11,23 @@ dependencies:
   cupertino_icons: ^1.0.2
   hooks_riverpod: ^2.4.9
   firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
+  firebase_storage: ^11.6.0
+  cloud_firestore: ^4.14.0
+  uuid: ^4.2.2
+  font_awesome_flutter: ^10.7.0
+  flutter_facebook_auth: ^6.0.4
+  google_sign_in: ^6.1.6
+  image_picker: ^1.0.7
+  image: ^4.1.4
+  flutter_hooks: ^0.20.4
+  collection: ^1.17.1
+  intl: ^0.19.0
+  video_thumbnail: ^0.5.3
+  video_player: ^2.7.2
+  lottie: ^2.6.0
+  share_plus: ^7.2.1
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   flutter_test:

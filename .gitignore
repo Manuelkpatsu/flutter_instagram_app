@@ -43,8 +43,10 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /android/app/google-services.json
+/android/app/src/main/res/values/strings.xml
 
 /ios/Runner/GoogleService-Info.plist
 /ios/firebase_app_id_file.json
+/ios/Runner/Info.plist
 
 /lib/firebase_options.dart
