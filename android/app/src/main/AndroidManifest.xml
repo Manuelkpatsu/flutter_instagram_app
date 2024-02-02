@@ -4,6 +4,8 @@
         <provider android:authorities="com.facebook.katana.provider.PlatformProvider"/>
     </queries>
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:label="instagram_app"
         android:name="${applicationName}"
@@ -60,7 +62,5 @@
             android:name="com.facebook.sdk.ClientToken"
             android:value="@string/facebook_client_token"/>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
