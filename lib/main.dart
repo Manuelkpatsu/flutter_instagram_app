@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'firebase_options.dart';
+import 'screens/components/loading/loading_screen.dart';
 import 'screens/login/login_screen.dart';
 import 'screens/main/main_screen.dart';
 import 'state/auth/providers/is_logged_in_provider.dart';
+import 'state/providers/is_loading_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +37,15 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       home: Consumer(
         builder: (context, ref, child) {
+          // install the loading screen
+          ref.listen<bool>(isLoadingProvider, (_, isLoading) {
+            if (isLoading) {
+              LoadingScreen.instance().show(context: context);
+            } else {
+              LoadingScreen.instance().hide();
+            }
+          });
+
           final isLoggedIn = ref.watch(isLoggedInProvider);
           return isLoggedIn ? const MainScreen() : const LoginScreen();
         },
