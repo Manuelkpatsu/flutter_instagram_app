@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'firebase_options.dart';
+import 'screens/login/login_screen.dart';
+import 'screens/main/main_screen.dart';
+import 'state/auth/providers/is_logged_in_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,18 +33,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       themeMode: ThemeMode.dark,
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends ConsumerWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Instagram')),
+      home: Consumer(
+        builder: (context, ref, child) {
+          final isLoggedIn = ref.watch(isLoggedInProvider);
+          return isLoggedIn ? const MainScreen() : const LoginScreen();
+        },
+      ),
     );
   }
 }

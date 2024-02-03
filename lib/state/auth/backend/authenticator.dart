@@ -6,6 +6,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class Authenticator {
+  const Authenticator();
+
   User? get currentUser => FirebaseAuth.instance.currentUser;
   UserId? get userId => currentUser?.uid;
   bool get isAlreadyLoggedIn => userId != null;
