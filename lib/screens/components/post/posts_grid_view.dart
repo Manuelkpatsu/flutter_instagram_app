@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_app/screens/post_details/post_details_screen.dart';
 import 'package:instagram_app/state/posts/models/post.dart';
 
 import 'post_thumbnail_view.dart';
@@ -23,7 +24,12 @@ class PostsGridView extends StatelessWidget {
 
         return PostThumbnailView(
           post: post,
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PostDetailsView(post: post)),
+            );
+          },
         );
       },
     );
