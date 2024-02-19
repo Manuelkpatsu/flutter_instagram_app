@@ -5,6 +5,7 @@ import 'package:instagram_app/screens/components/dialogs/alert_dialog_model.dart
 import 'package:instagram_app/screens/components/dialogs/logout_dialog.dart';
 import 'package:instagram_app/screens/constants/strings.dart';
 import 'package:instagram_app/screens/create_new_post/create_new_post_screen.dart';
+import 'package:instagram_app/screens/tabs/home/home_screen.dart';
 import 'package:instagram_app/screens/tabs/search/search_screen.dart';
 import 'package:instagram_app/screens/tabs/user_posts/user_posts_screen.dart';
 import 'package:instagram_app/state/auth/providers/auth_state_provider.dart';
@@ -21,7 +22,7 @@ class MainScreen extends ConsumerStatefulWidget {
 }
 
 class _MainScreenState extends ConsumerState<MainScreen> {
-  final List<Widget> _screens = const [UserPostsScreen(), SearchScreen(), UserPostsScreen()];
+  final List<Widget> _screens = const [HomeScreen(), SearchScreen(), UserPostsScreen()];
   final List<BottomNavigationBarItem> _navBarItems = [
     const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
     const BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
